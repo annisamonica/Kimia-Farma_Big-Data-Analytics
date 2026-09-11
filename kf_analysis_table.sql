@@ -21,7 +21,6 @@ CREATE OR REPLACE TABLE `rakamin-kimiafarmaa.kimia_farma.kf_analysis_table` AS S
   END AS persentase_gross_laba,
   ROUND(t.price * (1 - t.discount_percentage), 2) AS nett_sales, t.rating AS rating_transaksi
 FROM `rakamin-kimiafarmaa.kimia_farma.kf_final_transaction` t
-
 LEFT JOIN `rakamin-kimiafarmaa.kimia_farma.kf_kantor_cabang` c
   ON t.branch_id = c.branch_id
 LEFT JOIN `rakamin-kimiafarmaa.kimia_farma.kf_product` p
